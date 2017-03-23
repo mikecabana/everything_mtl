@@ -1,0 +1,30 @@
+{
+  "name": "everything_mtl",
+  "version": "1.0.0",
+  "description": "Tweeting everything montreal.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikecabana/everything_mtl.git"
+  },
+  "keywords": [
+    "twitter",
+    "tweet",
+    "everything",
+    "montreal",
+    "mtl"
+  ],
+  "author": "Michael Cabana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikecabana/everything_mtl/issues"
+  },
+  "homepage": "https://github.com/mikecabana/everything_mtl#readme",
+  "dependencies": {
+    "twit": "^2.2.5"
+  }
+}
