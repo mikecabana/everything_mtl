@@ -13,8 +13,8 @@ var stream = T.stream('user');
     console.log(screenName + " has followed you, following back in 5 mins.");
     setTimeout(followTwit(screenName), 1000*60*5); //follow back after 5 minutes
 }*/
-var retext = "Your one stop shop to everything montreal #mtl #montreal #news #sports #arts #music #schools #metro #culture #events #food #trends #tech #450";
-setInterval(function(){ sendTweet(retext) }, 36000000);
+var retext = "One stop shop to everything montreal #mtl #montreal #news #sports #arts #music #schools #metro #culture #events #food #trends #tech #450";
+setInterval(function(){ sendTweet(retext) }, 1000*60*2);
 
 stream.on('tweet', listupdated);
 
