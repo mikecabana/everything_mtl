@@ -1,19 +1,51 @@
 console.log("The bot is...botting");
 
 var Twit = require('twit');
-var config = require('./config')
+var config = require('./config');
 
 var T = new Twit(config);
 
-//setInterval(sendTweet, 1000)
-
 var stream = T.stream('user');
-stream.on('follow', followed);
 
-function followed(eventMsg){
+//stream.on('follow', followed);
+/*function followed(eventMsg){
     var screenName = eventMsg.source.screen_name;
-    console.log(screenName + "has followed you, following back in 5 mins.");
+    console.log(screenName + " has followed you, following back in 5 mins.");
     setTimeout(followTwit(screenName), 1000*60*5); //follow back after 5 minutes
+}*/
+var retext = "Your one stop shop to everything montreal #mtl #montreal #news #sports #arts #music #schools #metro #culture #events #food #trends #tech #450";
+setInterval(function(){ sendTweet(retext) }, 36000000);
+
+stream.on('tweet', listupdated);
+
+function listupdated(eventMsg){
+    var tweetid = eventMsg.id_str;
+    var tweetUserId = eventMsg.user.id_str;
+    //console.log(eventMsg.id);
+    if(tweetUserId != "844775593531006976"){
+         retweet(tweetid);
+    }
+   
+}
+
+
+
+
+//to retweet
+function retweet(tweetid){
+     var tweet = {
+        id: tweetid
+    }
+
+    T.post('statuses/retweet/:id', tweet,  retweeted); 
+
+    function retweeted (err, data, response) {
+        if(err) {
+            console.log(err);
+        }else{
+            console.log("You re-tweeted!");
+        }
+    }
 }
 
 //to follow user
