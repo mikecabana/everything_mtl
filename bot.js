@@ -14,7 +14,7 @@ var stream = T.stream('user');
     setTimeout(followTwit(screenName), 1000*60*5); //follow back after 5 minutes
 }*/
 var retext = "One stop shop to everything montreal #mtl #montreal #news #sports #arts #music #schools #metro #culture #events #food #trends #tech #450";
-setInterval(function(){ sendTweet(retext) }, 1000*60*60*6);
+//setInterval(function(){ sendTweet(retext) }, 1000*60*60*6);
 
 stream.on('tweet', listupdated);
 
